@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
  * @author ChiHsien<br>
  * @version
  */
-@Configuration
+//@Configuration
 public class ErrorMessageConfig {
 
     @Bean
