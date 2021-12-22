@@ -22,21 +22,21 @@ public class zkClient {
             @Override
             public void process(WatchedEvent watchedEvent) {
 
-//                System.out.println("-------------------------------");
-//                List<String> children = null;
-//                try {
-//                    children = zkClient.getChildren("/", true);
-//
-//                    for (String child : children) {
-//                        System.out.println(child);
-//                    }
-//
-//                    System.out.println("-------------------------------");
-//                } catch (KeeperException e) {
-//                    e.printStackTrace();
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+/*                System.out.println("-------------------------------");
+                List<String> children = null;
+                try {
+                    children = zkClient.getChildren("/", true);
+
+                    for (String child : children) {
+                        System.out.println(child);
+                    }
+
+                    System.out.println("-------------------------------");
+                } catch (KeeperException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
             }
         });
     }

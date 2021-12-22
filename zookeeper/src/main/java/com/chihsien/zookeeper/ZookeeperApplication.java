@@ -3,6 +3,9 @@ package com.chihsien.zookeeper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author chihsiencheng
+ */
 @SpringBootApplication
 public class ZookeeperApplication {
 

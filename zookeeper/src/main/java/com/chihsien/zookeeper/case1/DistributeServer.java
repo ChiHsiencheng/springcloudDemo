@@ -4,6 +4,9 @@ import org.apache.zookeeper.*;
 
 import java.io.IOException;
 
+/**
+ * @author chihsiencheng
+ */
 public class DistributeServer {
 
     private String connectString = "hadoop102:2181,hadoop103:2181,hadoop104:2181";

@@ -8,6 +8,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author chihsiencheng
+ */
 public class DistributedLock {
 
     private final String connectString = "hadoop102:2181,hadoop103:2181,hadoop104:2181";

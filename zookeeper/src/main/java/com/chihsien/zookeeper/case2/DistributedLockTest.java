@@ -4,6 +4,9 @@ import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
 
+/**
+ * @author chihsiencheng
+ */
 public class DistributedLockTest {
 
     public static void main(String[] args) throws InterruptedException, IOException, KeeperException {

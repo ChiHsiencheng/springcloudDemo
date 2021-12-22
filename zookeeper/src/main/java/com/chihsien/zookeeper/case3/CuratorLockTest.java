@@ -5,6 +5,9 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
+/**
+ * @author chihsiencheng
+ */
 public class CuratorLockTest {
 
     public static void main(String[] args) {

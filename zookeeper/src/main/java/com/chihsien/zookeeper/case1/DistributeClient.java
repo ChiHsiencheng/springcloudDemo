@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author chihsiencheng
+ */
 public class DistributeClient {
 
     private String connectString = "hadoop102:2181,hadoop103:2181,hadoop104:2181";
