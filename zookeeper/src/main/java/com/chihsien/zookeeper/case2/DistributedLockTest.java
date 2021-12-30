@@ -3,6 +3,10 @@ package com.chihsien.zookeeper.case2;
 import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author chihsiencheng
@@ -10,10 +14,9 @@ import java.io.IOException;
 public class DistributedLockTest {
 
     public static void main(String[] args) throws InterruptedException, IOException, KeeperException {
-
+        ThreadPoolExecutor te = new ThreadPoolExecutor(1, 20, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(50), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
        final  DistributedLock lock1 = new DistributedLock();
-
-        final  DistributedLock lock2 = new DistributedLock();
+       final  DistributedLock lock2 = new DistributedLock();
 
        new Thread(new Runnable() {
            @Override

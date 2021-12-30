@@ -59,9 +59,7 @@ public class DistributeClient {
 
                 try {
                     getServerList();
-                } catch (KeeperException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                } catch (KeeperException | InterruptedException e) {
                     e.printStackTrace();
                 }
             }

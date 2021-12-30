@@ -26,18 +26,15 @@ public class DistributedLock {
     public DistributedLock() throws IOException, InterruptedException, KeeperException {
 
         // 获取连接
-        zk = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
-            @Override
-            public void process(WatchedEvent watchedEvent) {
-                // connectLatch  如果连接上zk  可以释放
-                if (watchedEvent.getState() == Event.KeeperState.SyncConnected){
-                    connectLatch.countDown();
-                }
+        zk = new ZooKeeper(connectString, sessionTimeout, watchedEvent -> {
+            // connectLatch  如果连接上zk  可以释放
+            if (watchedEvent.getState() == Watcher.Event.KeeperState.SyncConnected){
+                connectLatch.countDown();
+            }
 
-                // waitLatch  需要释放
-                if (watchedEvent.getType()== Event.EventType.NodeDeleted && watchedEvent.getPath().equals(waitPath)){
-                    waitLatch.countDown();
-                }
+            // waitLatch  需要释放
+            if (watchedEvent.getType()== Watcher.Event.EventType.NodeDeleted && watchedEvent.getPath().equals(waitPath)){
+                waitLatch.countDown();
             }
         });
 

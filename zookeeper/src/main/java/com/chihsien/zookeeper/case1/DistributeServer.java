@@ -40,11 +40,8 @@ public class DistributeServer {
 
     private void getConnect() throws IOException {
 
-        zk = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
-            @Override
-            public void process(WatchedEvent watchedEvent) {
+        zk = new ZooKeeper(connectString, sessionTimeout, watchedEvent -> {
 
-            }
         });
     }
 }
